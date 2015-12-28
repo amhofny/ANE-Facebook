@@ -79,8 +79,8 @@
             <src path="../android/src"/>
             <classpath>
                 <pathelement location="${android.platform.home}/android.jar"/>
-                <pathelement location="${android.support.v4.path}/android-support-v4.jar"/>
-                <pathelement location="${android.support.annotations.path}/android-support-annotations.jar"/>
+                <pathelement location="../android/libs/android-support-v4.jar"/>
+                <pathelement location="../android/libs/annotations.jar"/>
                 <pathelement location="${air.sdk.home}/lib/android/FlashRuntimeExtensions.jar"/>
                 <pathelement location="../android/libs/bolts-android-1.1.2.jar"/>
             </classpath>
@@ -95,7 +95,9 @@
 
         <!-- Copy over the required libs -->
         <copy file="../android/libs/bolts-android-1.1.2.jar" todir="temp/android/"/>
-        
+        <copy file="../android/libs/annotations.jar" todir="temp/android/"/>
+        <copy file="../android/libs/android-support-v4.jar" todir="temp/android/"/>
+
         <!-- Copy over required resources -->
         <copy todir="temp/android/res/">
             <fileset dir="../android/res/"/>
@@ -122,7 +124,7 @@
             <env key="AIR_SDK_HOME" value="${air.sdk.home}"/>
             <arg line='-source-path ../actionscript/src'/>
             <arg line='-output temp/swc/${name}.swc'/>
-            <arg line='-swf-version=25'/>
+            <arg line='-swf-version=29'/>
             <arg line='-external-library-path+="${air.sdk.home}/frameworks/libs/air/airglobal.swc"'/>
             <arg line='-include-classes ${classlist}'/>
         </exec>

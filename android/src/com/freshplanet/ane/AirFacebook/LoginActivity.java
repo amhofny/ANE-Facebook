@@ -32,7 +32,6 @@ import android.view.Window;
 import com.facebook.FacebookOperationCanceledException;
 import com.facebook.Session;
 import com.facebook.SessionState;
-import com.facebook.android.R;
 
 public class LoginActivity extends Activity
 {	
@@ -62,7 +61,7 @@ public class LoginActivity extends Activity
 		
 		// Setup views
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.com_facebook_login_activity_layout);
+		setContentView(_context.getResourceId("layout.com_facebook_login_activity_layout"));
 		
 		// Get extra values
 		Bundle extras = this.getIntent().getExtras();
